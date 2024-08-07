@@ -3,26 +3,31 @@
 {% block content %}
   <div class="right_col" role="main">
     <h1>Listar Usuarios</h1>
-    <div>
-      <form action="">
         <table class="table table-sm">
           <thead>
             <tr>
-              <th>#</th>
-              <th>Nombres</th>
-              <th>Apellidos</th>
-              <th>Fechas</th>
+              <th>N°</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Correo</th>
+              <th>Telefono</th>
+              <th>Fecha de Nacimiento</th>
+              <th>Fecha de Registro</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th>hola</th>
-              <th>hola</th>
-              <th>hola</th>
-            </tr>
+            {% for  u in usuarios %}
+              <tr>
+                <th>{{ u.id }}</th>
+                <th>{{ u.nombre }}</th>
+                <th>{{ u.apellido }}</th>
+                <th>{{ u.correo }}</th>
+                <th>{{ u.telefono }}</th>
+                <th>{{ u.f_nac }}</th>
+                <th>{{ u.f_registro }}</th>
+              </tr>
+            {% endfor %}
           </tbody>
         </table>
-      </form>
-    </div>
   </div>
 {% endblock %}
